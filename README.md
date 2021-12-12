@@ -1,4 +1,4 @@
-# UMN-VisualTrasitSimulator-CSCI3081W
+# UMN-VisualTransitSimulator-CSCI3081W
 
 ## Visual Transit Simulator Software
 ### Description
