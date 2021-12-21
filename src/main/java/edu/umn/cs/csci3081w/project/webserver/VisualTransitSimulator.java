@@ -1,7 +1,17 @@
 package edu.umn.cs.csci3081w.project.webserver;
 
-import edu.umn.cs.csci3081w.project.model.*;
-
+import edu.umn.cs.csci3081w.project.model.BusFactory;
+import edu.umn.cs.csci3081w.project.model.Counter;
+import edu.umn.cs.csci3081w.project.model.DieselTrainDecorator;
+import edu.umn.cs.csci3081w.project.model.ElectricTrainDecorator;
+import edu.umn.cs.csci3081w.project.model.LargeBusDecorator;
+import edu.umn.cs.csci3081w.project.model.Line;
+import edu.umn.cs.csci3081w.project.model.SmallBusDecorator;
+import edu.umn.cs.csci3081w.project.model.StorageFacility;
+import edu.umn.cs.csci3081w.project.model.TrainFactory;
+import edu.umn.cs.csci3081w.project.model.Vehicle;
+import edu.umn.cs.csci3081w.project.model.VehicleConcreteSubject;
+import edu.umn.cs.csci3081w.project.model.VehicleFactory;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -88,7 +98,6 @@ public class VisualTransitSimulator {
     }
     System.out.println("~~~~The simulation time is now at time step "
         + simulationTimeElapsed + "~~~~");
-//    System.out.println(lines.get(0).getId());
     // generate vehicles
     for (int i = 0; i < timeSinceLastVehicle.size(); i++) {
       Line line = lines.get(i);
@@ -101,7 +110,6 @@ public class VisualTransitSimulator {
         }
         if (line.getType().equals(Line.TRAIN_LINE) || line.getType().equals(Line.BUS_LINE)) {
           if (generatedVehicle != null && !line.isIssueExist()) {
-//            System.out.println("generated and added vehicle: " + generatedVehicle.getId());
             activeVehicles.add(generatedVehicle);
           }
           timeSinceLastVehicle.set(i, vehicleStartTimings.get(i));
@@ -120,11 +128,11 @@ public class VisualTransitSimulator {
       if (currVehicle.isTripComplete()) {
         Vehicle completedTripVehicle = activeVehicles.remove(i);
         completedTripVehicles.add(completedTripVehicle);
-        if (completedTripVehicle instanceof SmallBusDecorator ||
-            completedTripVehicle instanceof LargeBusDecorator) {
+        if (completedTripVehicle instanceof SmallBusDecorator
+            || completedTripVehicle instanceof LargeBusDecorator) {
           busFactory.returnVehicle(completedTripVehicle);
-        } else if (completedTripVehicle instanceof ElectricTrainDecorator ||
-            completedTripVehicle instanceof DieselTrainDecorator) {
+        } else if (completedTripVehicle instanceof ElectricTrainDecorator
+            || completedTripVehicle instanceof DieselTrainDecorator) {
           trainFactory.returnVehicle(completedTripVehicle);
         }
       } else {

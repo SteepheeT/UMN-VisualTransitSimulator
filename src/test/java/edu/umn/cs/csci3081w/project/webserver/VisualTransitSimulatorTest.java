@@ -33,6 +33,9 @@ public class VisualTransitSimulatorTest {
     RandomPassengerGenerator.DETERMINISTIC = true;
   }
 
+  /**
+   * Testing update function without initialize the VTS.
+   */
   @Test
   public void testUpdateWithoutInitialization() {
     WebServerSession webServerSessionSpy = spy(WebServerSession.class);
@@ -47,6 +50,9 @@ public class VisualTransitSimulatorTest {
 
   }
 
+  /**
+   * Testing update function with initialize the VTS.
+   */
   @Test
   public void testUpdateWithInitialization() {
     try {
@@ -112,6 +118,9 @@ public class VisualTransitSimulatorTest {
     }
   }
 
+  /**
+   * Test update function with initialize the logging.
+   */
   @Test
   public void testUpdateWithInitializedLogging() {
     try {

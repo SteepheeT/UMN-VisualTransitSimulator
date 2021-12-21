@@ -26,18 +26,24 @@ public class TrainFactoryTest {
   }
 
   /**
-   * Testing the constructor.
+   * Testing the type of the strategy in day.
    */
   @Test
   public void testConstructorDay() {
     assertTrue(trainFactoryDay.getGenerationStrategy() instanceof TrainStrategyDay);
   }
 
+  /**
+   * Testing the type of the strategy in night.
+   */
   @Test
   public void testConstructorNight() {
     assertTrue(trainFactoryNight.getGenerationStrategy() instanceof TrainStrategyNight);
   }
 
+  /**
+   * Testing the constructor.
+   */
   @Test
   public void testConstructor() {
     StorageFacility storageFacilityDummy = mock(StorageFacility.class);

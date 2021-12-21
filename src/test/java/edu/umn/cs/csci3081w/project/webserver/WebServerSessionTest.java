@@ -166,6 +166,9 @@ public class WebServerSessionTest {
     }
   }
 
+  /**
+   * Testing the Register vehicle command.
+   */
   @Test
   public void testRegisterVehicleCommand() {
     WebServerSession webServerSessionSpy = spy(WebServerSession.class);
@@ -208,6 +211,9 @@ public class WebServerSessionTest {
     }
   }
 
+  /**
+   * Testing the get vehicle command.
+   */
   @Test
   public void testGetVehicleCommand() {
     WebServerSession webServerSessionSpy = spy(WebServerSession.class);
@@ -248,6 +254,9 @@ public class WebServerSessionTest {
 
   }
 
+  /**
+   * Testing the get route command.
+   */
   @Test
   public void testGetRoutesCommand() {
     WebServerSession webServerSessionSpy = spy(WebServerSession.class);

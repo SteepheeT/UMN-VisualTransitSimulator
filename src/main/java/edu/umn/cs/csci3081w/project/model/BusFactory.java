@@ -22,6 +22,11 @@ public class BusFactory implements VehicleFactory {
     this.counter = counter;
   }
 
+  /**
+   * Generate Vehicle at specific line.
+   * @param line the line want ot add a vehicle
+   * @return vehicle on this line
+   */
   @Override
   public Vehicle generateVehicle(Line line) {
     String typeOfVehicle = generationStrategy.getTypeOfVehicle(storageFacility);
@@ -40,6 +45,10 @@ public class BusFactory implements VehicleFactory {
     return generatedVehicle;
   }
 
+  /**
+   * When vehicle finish service, let storage facility get one vehicle count back.
+   * @param vehicle current vehicle stop service
+   */
   @Override
   public void returnVehicle(Vehicle vehicle) {
     if (vehicle instanceof SmallBusDecorator) {
@@ -69,6 +78,8 @@ public class BusFactory implements VehicleFactory {
 
   /**
    * Set generation strategy.
+   *
+   * @param st vehicle generation strategy
    */
   public void setGenerationStrategy(GenerationStrategy st) {
     this.generationStrategy = st;

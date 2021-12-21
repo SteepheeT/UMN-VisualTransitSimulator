@@ -64,6 +64,9 @@ public class RandomPassengerGeneratorTest {
 
   }
 
+  /**
+   * Test generatePassengers function with probability.
+   */
   @Test
   public void testGeneratePassengersRandom() {
     RandomPassengerGenerator.DETERMINISTIC = false;

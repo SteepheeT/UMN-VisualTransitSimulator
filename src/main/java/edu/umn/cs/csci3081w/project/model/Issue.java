@@ -29,7 +29,7 @@ public class Issue {
   }
 
   /**
-   * Checks
+   * Checks if issue is resolved.
    *
    * @return true if issue is resolved else false
    */

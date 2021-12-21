@@ -17,6 +17,10 @@ public abstract class Bus extends Vehicle {
     super(id, line, capacity, speed, new PassengerLoader(), new PassengerUnloader());
   }
 
+  /**
+   * Report statistics for the bus.
+   * @param out stream for printing
+   */
   public void report(PrintStream out) {
 
   }

@@ -1,5 +1,7 @@
 package edu.umn.cs.csci3081w.project.model;
 
+import java.util.Arrays;
+
 public class Counter {
 
   private int routeIdCounter = 10;
@@ -11,6 +13,8 @@ public class Counter {
   private int lineIdCounter = 10000;
 
   public Counter() {
+    int[] arr = new int[10];
+    Arrays.sort(arr);
 
   }
 

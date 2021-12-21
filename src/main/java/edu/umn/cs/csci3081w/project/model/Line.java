@@ -106,6 +106,9 @@ public class Line {
     return !issue.isIssueResolved();
   }
 
+  /**
+   * Create Issue for current line.
+   */
   public void createIssue() {
     this.issue.createIssue();
   }

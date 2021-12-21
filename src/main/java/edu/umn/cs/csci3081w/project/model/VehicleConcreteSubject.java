@@ -25,7 +25,6 @@ public class VehicleConcreteSubject implements VehicleSubject {
    * @param observer the observing vehicle
    */
   public void attachObserver(VehicleObserver observer) {
-//    System.out.println("concrete: adding " + observer.toString());
     observers.clear();
     observer.setVehicleSubject(this);
     observers.add(observer);

@@ -22,15 +22,12 @@ public class RegisterVehicleCommand extends SimulatorCommand {
   public void execute(WebServerSession session, JsonObject command) {
     List<Vehicle> activeVehicles = simulator.getActiveVehicles();
     int vehicleId = command.get("id").getAsInt();
-//    System.out.println("got lst: " + activeVehicles);
-//    System.out.println(vehicleId);
     Vehicle vehicle = null;
     for (Vehicle activeVehicle : activeVehicles) {
       if (activeVehicle.getId() == vehicleId) {
         vehicle = activeVehicle;
       }
     }
-//    System.out.println("adding Vehicle: " + vehicle.getId());
     simulator.addObserver(vehicle);
   }
 }

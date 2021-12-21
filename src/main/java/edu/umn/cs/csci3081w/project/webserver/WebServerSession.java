@@ -106,5 +106,4 @@ public class WebServerSession {
   public VisualTransitSimulator getVisualTransitSimulator() {
     return simulator;
   }
-
 }

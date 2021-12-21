@@ -17,6 +17,10 @@ public abstract class Train extends Vehicle {
     super(id, line, capacity, speed, new PassengerLoader(), new PassengerUnloader());
   }
 
+  /**
+   * Report the information of current train.
+   * @param out stream for printing
+   */
   public void report(PrintStream out) {
 
   }
